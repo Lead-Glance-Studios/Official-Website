@@ -255,6 +255,46 @@ section {
   margin-right: 8rem;
 } */
 
+.contact{
+  height: 100vh;
+  padding-top: 15rem;
+}
+
+.contact-text{
+  letter-spacing: 0.1rem;
+}
+.contact-text h3{
+  opacity: 0.5;
+  font-weight: normal;
+}
+.contact-info{
+  margin-top: 16rem;
+  opacity: 0.5;
+}
+
+.social{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  margin-top: 3rem;
+}
+.social span{
+  margin-right: 1rem;
+  border: 2px solid var(--primary-color);
+  height: 1.5rem;
+  width: 1.5rem;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.social span img{
+  object-fit: cover;
+  overflow: hidden;
+  height: 0.9rem;
+  width: 0.9rem;
+}
+
 @media (min-width: 768px) {
 
 }
