@@ -29,10 +29,20 @@ html{
 
 .header {
   margin-top: 4rem;
+  /* margin: 0; */
+  position: fixed;
+  top: 0;
+  width: 90%;
+  z-index: 100;
 }
 
 #logo{
   height: 5rem;
+}
+
+.space-between{
+  display: flex;
+  justify-content: space-between;
 }
 
 .box {
@@ -92,10 +102,6 @@ html{
   transform: translate(3px, 8px) rotate(-45deg);
 }
 
-.space-between{
-  display: flex;
-  justify-content: space-between;
-}
 
 main {
   margin: 0 auto;
@@ -103,12 +109,12 @@ main {
 }
 
 section {
-  margin: 0 1rem;
+  margin: 15rem 1rem 0;
 }
 
 .landing{
   position: relative;
-  margin-top: 9rem;
+  /* margin-top: 9rem; */
 }
 #background-text{
   position: absolute;
@@ -172,6 +178,20 @@ section {
   font-weight: bold;
   font-size: 10px;
 }
+
+/* ABOUT US STARTS HERE */
+.about-us {
+  height: 100vh;
+  padding-top: 15rem;
+}
+
+.us-text h4{
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  color: var(--primary-color);
+  margin: 4rem 0 2.5rem 0;
+}
+
 
 @media (min-width: 768px) {
 
