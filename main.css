@@ -13,11 +13,18 @@
 *::before{
   box-sizing: inherit;
 }
+
+
+li {
+  list-style: none;
+}
+
 body{
   /* margin: auto 1rem; */
   /* font-family: sans-serif; */
   background-color: var(--bg-color);
   color: white;
+  overflow-x: hidden;
 }
 html{
   font-size: 16px;
@@ -192,6 +199,61 @@ section {
   margin: 4rem 0 2.5rem 0;
 }
 
+/* OUR WORK STARTS HERE */
+.our-work {
+  height: 100vh;
+  padding-top: 15rem;
+}
+
+.work-center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 7rem;
+  /* text-align: center; */
+}
+
+.work-center span{
+  position: absolute;
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.24rem;
+  opacity: 0.06;
+  width: 100%;
+  text-align: center;
+}
+.work-center p {
+  font-size: 0.8rem;
+  margin-top: 0.35rem;
+  text-transform: uppercase;
+}
+
+#projects-list{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  overflow-x: hidden;
+  white-space:nowrap;
+  margin-top: 15rem;
+  cursor: pointer;
+}
+
+#projects-list h5{
+  text-transform: uppercase;
+  display: inline-block;
+  margin-right: 2rem;
+  letter-spacing: 0.15rem;
+}
+
+#projects-list li:first-child {
+  margin-left: 6.5rem;
+}
+
+/* #projects-list li:last-child {
+  margin-right: 8rem;
+} */
 
 @media (min-width: 768px) {
 
