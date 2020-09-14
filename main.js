@@ -3,13 +3,24 @@ document.addEventListener("DOMContentLoaded", init)
 function init() {
   eventListeners();
   createProjectsList();
-  projectsScroll();
+  menuScroll();
 }
 
 function eventListeners(){
-  document.querySelector(".box").addEventListener("click", ev => 
-  document.querySelector(".box").classList.toggle("x"));
+  document.querySelector(".box").addEventListener("click", () => {
+    document.querySelector(".menu").classList.toggle("show")
+    document.querySelector(".box").classList.toggle("highlight")
+  });
+
+  let menuItems = document.querySelectorAll(".menu-item")
+  menuItems.forEach(item => item.addEventListener('click', handleMenuClose))
 }
+
+
+function handleMenuClose(){
+  document.querySelector(".menu").classList.remove("show")
+}
+
 
 function createProjectsList(){
   let projectsList = [
@@ -52,4 +63,30 @@ function createProjectsList(){
     project.appendChild(textContainer);
     container.appendChild(project);
   })
+}
+
+function menuScroll(){
+  const slider = document.querySelector('.menu-items');
+  let isDown = false;
+  let startX;
+  let scrollLeft;
+
+  slider.addEventListener('mousedown', ev => {
+    isDown = true;
+    startX = ev.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  });
+  slider.addEventListener('mouseleave', () => {
+    isDown = false;
+  });
+  slider.addEventListener('mouseup', () => {
+    isDown = false;
+  });
+  slider.addEventListener('mousemove', ev => {
+    if(!isDown) return;
+    ev.preventDefault();
+    const x = ev.pageX - slider.offsetLeft;
+    const scrollSpeed = (x - startX) * 1;
+    slider.scrollLeft = scrollLeft - scrollSpeed;
+  });
 }

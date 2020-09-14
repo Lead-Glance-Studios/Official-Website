@@ -27,7 +27,7 @@ body{
   /* font-family: sans-serif; */
   background-color: var(--bg-color);
   color: white;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 html{
   font-size: 16px;
@@ -44,7 +44,7 @@ html{
   position: fixed;
   /* top: 0; */
   width: 100%;
-  z-index: 100;
+  z-index: 1000;
 }
 
 #logo{
@@ -105,6 +105,17 @@ html{
   border-radius: 1px;
   transition: all 0.3s linear;
 }
+
+.box.highlight .burger{
+  background-color: white;
+}
+
+.box.highlight,
+.box.highlight .burger::before,
+.box.highlight .burger::after{
+  border-color: white;
+}
+
 .burger::before {
   top: 0;
   transform-origin: left top;
@@ -116,27 +127,60 @@ html{
   transform: rotate(0deg) translate(0, 8px);
 }
 
-.x .burger {
-  background-color: transparent;
+.menu{
+  display: block;
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--primary-color);
+  z-index: 500;
+  transition: all 1000ms;
+  transform: translateX(200%);
 }
-.x .burger::before {
-  border-radius: 4px;
-  transform: translate(5px, -8px) rotate(45deg);
+.show{
+  transform: translateX(0%);
 }
-.x .burger::after {
-  border-radius: 4px;
-  transform: translate(3px, 8px) rotate(-45deg);
+.menu .bottom-text{
+  text-align: center;
+}
+.menu-items{
+  overflow-x: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  overflow-y: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 90%;
+  white-space:nowrap
+  /* overflow: scroll; */
+}
+.menu-items::-webkit-scrollbar { /* WebKit */
+  width: 0;
+  height: 0;
+}
+.menu-items img{
+  /* height: auto; */
+  /* width: 20%; */
+  display:inline-block;
+  padding-top: 2rem;
+  margin-right: 3rem;
+  cursor: pointer;
 }
 
+.menu-items div:first-child{
+  margin-left: 8.5rem;
+}
+
+.bottom-text{
+  /* position: fixed; */
+}
 
 main {
   margin: 0 auto;
   /* max-width: 1400px; */
-}
-
-section {
-  /* margin: 15rem 1rem 0; */
-  /* margin: 0 2rem; */
 }
 
 .content{
@@ -191,9 +235,6 @@ section {
 .plus {
   text-align: end;
   position: relative;
-  /* left: 100%; */
-  /* margin-top: 6rem; */
-  /* line-height: 0.75rem; */
   font-weight: bold;
   font-size: 10px;
   margin-top: 3rem;
@@ -298,16 +339,10 @@ section {
 }
 
 
-/* #projects-list li:last-child {
-  margin-right: 8rem;
-} */
-
 /************************** 
         COONTACT
 **************************/
 .contact{
-  /* height: 100vh; */
-  /* padding-top: 15rem; */
   padding-bottom: 5rem;
 }
 
@@ -362,21 +397,27 @@ section {
     width: 70%;
   }
 
+  .plus svg{
+    bottom: 0px;
+    padding-bottom: 2rem;
+  }
+  
   .projects-list .text-container{
     margin: 0 0 2rem 19.5rem;
   }
 }
 
 @media (min-width: 1250px) {
- 
-  /* .plus {
-    text-align: end;
-    margin-left: 5rem;
-    margin-top: 16rem;
-    line-height: 0.75rem;
-    font-weight: bold;
-    font-size: 10px;
-  } */
+  .menu-items{
+    justify-content: center;
+  }
+
+  .menu-items img{
+    height: auto;
+    width: 100%;
+    padding-right: 4rem;
+  }
+
   .landing{
     height: 100vh;
   }
